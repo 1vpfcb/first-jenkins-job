@@ -103,5 +103,8 @@ test.describe('Payment plans', () => {
         console.log('After clicking the Next button, the total price and back button are visible on the payment page.');
 
     });
+    test('', async({page}) =>{
+
+    });
 
 });
