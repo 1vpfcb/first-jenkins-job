@@ -89,7 +89,7 @@ test.describe('Payment plans', () => {
             console.log(` after pressing on ${plan} the Next button is enabled`)
         };
 
-        await paymentPlan.activeNextBttn.toBeEnabled();
+        await expect(paymentPlan.activeNextBttn).toBeEnabled();
         await paymentPlan.activeNextBttn.click();
 
 
