@@ -83,10 +83,11 @@ test.describe('Payment plans', () => {
 
         // checked if the next button is enabled after selecting a payment plan
         let plans = [paymentPlan.upfrontPaymentPlan, paymentPlan.FiveInstallments];
-        for (let plan of plans) {
-            await plan.click();
+        for (let i = 0; i < plans.length; i++) {
+            const currentPlan = plans[i];
+            await currentPlan.click();
             await expect(paymentPlan.activeNextBttn).toBeEnabled();
-            console.log(` after pressing on ${plan} the Next button is enabled`)
+            console.log(`Plan #${i + 1} selected: the Next button is now enabled`)
         };
 
         await expect(paymentPlan.activeNextBttn).toBeEnabled();
