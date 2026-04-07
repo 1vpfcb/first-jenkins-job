@@ -33,6 +33,10 @@ jobs:
 
     # runs the tests in headless mode (without a GUI)
     - name: Run Playwright tests
+      env:
+        SEP_QA_URL: ${{ secrets.SEP_QA_URL }}
+        SEP_USERNAME: ${{ secrets.SEP_USERNAME }}
+        SEP_PASSWORD: ${{ secrets.SEP_PASSWORD }}
       run: npm run tests:headless
 
     # Upload test results and reports
